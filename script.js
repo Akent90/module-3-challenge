@@ -14,6 +14,12 @@ function generatePassword() {
     alert("You must select at least one character type.");
     return "Invalid selection. Please try again.";
   }
+
+  var passwordLength = parseInt(prompt("Enter password length (8-128 characters):"));
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    return "invalid length. Please try again with a length between 8 and 128 characters.";
+  }
+  
 }
 
 var generateBtn = document.querySelector("#generate");
