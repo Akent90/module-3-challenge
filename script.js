@@ -19,7 +19,12 @@ function generatePassword() {
   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     return "invalid length. Please try again with a length between 8 and 128 characters.";
   }
-  
+
+  var charSet = [];
+  if (includeLowerCase === 'yes') charSet = charSet.concat(lowerCaseChars);
+  if (includeUpperCase === 'yes') charSet = charSet.concat(upperCaseChars);
+  if (includeNumeric === 'yes') charSet = charSet.concat(numericChars);
+  if (includeSpecialChars === 'yes') charSet = charSet.concat(specialChars);
 }
 
 var generateBtn = document.querySelector("#generate");
