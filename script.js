@@ -25,6 +25,12 @@ function generatePassword() {
   if (includeUpperCase === 'yes') charSet = charSet.concat(upperCaseChars);
   if (includeNumeric === 'yes') charSet = charSet.concat(numericChars);
   if (includeSpecialChars === 'yes') charSet = charSet.concat(specialChars);
+
+  var password = '';
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = parseInt(Math.random() * charSet.length);
+    password += charSet[randomIndex];
+  }
 }
 
 var generateBtn = document.querySelector("#generate");
